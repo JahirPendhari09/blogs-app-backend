@@ -3,8 +3,11 @@ const { connection } = require("./db");
 const { userRouter } = require("./Routes/user.routes");
 const { blogRouter } = require("./Routes/blog.routes");
 const app = express();
+const cors = require('cors')
 
 app.use(express.json());
+ 
+app.use(cors())
 
 app.use("/users",userRouter);
 app.use("/blogs",blogRouter);
